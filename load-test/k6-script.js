@@ -40,6 +40,7 @@ export default function () {
     }
   };
 
+  // CREATE SHORT URL
   const shortenResponse =
     http.post(
       `${BASE_URL}/api/shorten`,
@@ -47,19 +48,45 @@ export default function () {
       params
     );
 
-  check(shortenResponse, {
-    "shorten success":
-      (r) => r.status === 201
-  });
+  const shortenSuccess = check(
+    shortenResponse,
+    {
+      "shorten success":
+        (r) => r.status === 201
+    }
+  );
 
-  const body =
-    shortenResponse.json();
+  // IMPORTANT FIX
+  if (!shortenSuccess) {
+    console.log(
+      "Shorten failed:",
+      shortenResponse.status,
+      shortenResponse.body
+    );
+
+    return;
+  }
+
+  let body;
+
+  try {
+    body =
+      shortenResponse.json();
+  } catch (err) {
+    console.log(
+      "JSON Parse Error:",
+      shortenResponse.body
+    );
+
+    return;
+  }
 
   const shortCode =
     body.short_code;
 
   sleep(1);
 
+  // REDIRECT TEST
   const redirectResponse =
     http.get(
       `${BASE_URL}/${shortCode}`,
@@ -81,6 +108,7 @@ export default function () {
 
   sleep(1);
 
+  // ANALYTICS TEST
   const analyticsResponse =
     http.get(
       `${BASE_URL}/api/analytics/${shortCode}`
