@@ -3,7 +3,6 @@ node_modules
 dist
 coverage
 npm-debug.log
-Dockerfile*
 *.log
 postgres_data
 redis_data
