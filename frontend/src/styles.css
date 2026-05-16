@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #111827;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
+.result-url {
+  margin-top: 12px;
+  word-break: break-word;
+}
+
+.loader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error {
+  background: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.copy-btn {
+  margin-top: 10px;
+  background: #16a34a;
+}
+
+.copy-btn:hover {
+  background: #15803d;
+}
+
+.analytics-link {
+  color: #38bdf8;
+  display: block;
+  margin-top: 14px;
+}
