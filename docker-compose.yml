@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   postgres:
     image: postgres:16-alpine
@@ -45,7 +43,7 @@ services:
     container_name: api
     restart: unless-stopped
     env_file:
-      - .env.example
+      - .env
     ports:
       - "5000:5000"
     depends_on:
